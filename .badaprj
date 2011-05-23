@@ -2,7 +2,7 @@
 <bada>
     <type>1</type>
     <sdk>E:\bada\1.2.1</sdk>
-    <model>Wave_LP1</model>
+    <model>Wave_LP3</model>
     <apiversioncheck>true</apiversioncheck>
     <priviligecheck>false</priviligecheck>
     <properties>

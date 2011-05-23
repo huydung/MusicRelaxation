@@ -1,24 +1,23 @@
-#ifndef _FORM1_H_
-#define _FORM1_H_
+#ifndef _FORMHOME_H_
+#define _FORMHOME_H_
 
 #include <FBase.h>
 #include <FUi.h>
 
-class Form1 :
+class FormHome :
 	public Osp::Ui::Controls::Form,
 	public Osp::Ui::IActionEventListener
 {
 
 // Construction
 public:
-	Form1(void);
-	virtual ~Form1(void);
+	FormHome(void);
+	virtual ~FormHome(void);
 	bool Initialize(void);
 
 // Implementation
 protected:
-	static const int ID_BUTTON_OK = 101;
-	Osp::Ui::Controls::Button *__pButtonOk;
+
 
 public:
 	virtual result OnInitializing(void);

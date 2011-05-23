@@ -7,7 +7,7 @@
 
 
 #include "MusicRelaxtion.h"
-#include "Form1.h"
+#include "FormHome.h"
 
 using namespace Osp::App;
 using namespace Osp::Base;
@@ -44,7 +44,7 @@ MusicRelaxtion::OnAppInitializing(AppRegistry& appRegistry)
 	//PowerManager::SetScreenEventListener(*this);
 
 	// Create a form
-	Form1 *pForm1 = new Form1();
+	FormHome *pForm1 = new FormHome();
 	pForm1->Initialize();
 
 	// Add the form to the frame
