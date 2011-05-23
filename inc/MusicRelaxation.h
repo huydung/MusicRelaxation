@@ -1,5 +1,5 @@
-#ifndef _MUSICRELAXTION_H_
-#define _MUSICRELAXTION_H_
+#ifndef _MUSICRELAXATION_H_
+#define _MUSICRELAXATION_H_
 
 #include <FApp.h>
 #include <FBase.h>
@@ -10,7 +10,7 @@
  * [MusicRelaxtion] application must inherit from Application class
  * which provides basic features necessary to define an application.
  */
-class MusicRelaxtion :
+class MusicRelaxation :
 	public Osp::App::Application,
 	public Osp::System::IScreenEventListener
 {
@@ -23,8 +23,8 @@ public:
 
 
 public:
-	MusicRelaxtion();
-	~MusicRelaxtion();
+	MusicRelaxation();
+	~MusicRelaxation();
 
 
 public:

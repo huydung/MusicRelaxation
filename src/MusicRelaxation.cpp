@@ -6,7 +6,7 @@
  */
 
 
-#include "MusicRelaxtion.h"
+#include "MusicRelaxation.h"
 #include "FormHome.h"
 
 using namespace Osp::App;
@@ -15,23 +15,23 @@ using namespace Osp::System;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 
-MusicRelaxtion::MusicRelaxtion()
+MusicRelaxation::MusicRelaxation()
 {
 }
 
-MusicRelaxtion::~MusicRelaxtion()
+MusicRelaxation::~MusicRelaxation()
 {
 }
 
 Application*
-MusicRelaxtion::CreateInstance(void)
+MusicRelaxation::CreateInstance(void)
 {
 	// Create the instance through the constructor.
-	return new MusicRelaxtion();
+	return new MusicRelaxation();
 }
 
 bool
-MusicRelaxtion::OnAppInitializing(AppRegistry& appRegistry)
+MusicRelaxation::OnAppInitializing(AppRegistry& appRegistry)
 {
 	// TODO:
 	// Initialize UI resources and application specific data.
@@ -62,7 +62,7 @@ MusicRelaxtion::OnAppInitializing(AppRegistry& appRegistry)
 }
 
 bool
-MusicRelaxtion::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
+MusicRelaxation::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 {
 	// TODO:
 	// Deallocate resources allocated by this application for termination.
@@ -71,28 +71,28 @@ MusicRelaxtion::OnAppTerminating(AppRegistry& appRegistry, bool forcedTerminatio
 }
 
 void
-MusicRelaxtion::OnForeground(void)
+MusicRelaxation::OnForeground(void)
 {
 	// TODO:
 	// Start or resume drawing when the application is moved to the foreground.
 }
 
 void
-MusicRelaxtion::OnBackground(void)
+MusicRelaxation::OnBackground(void)
 {
 	// TODO:
 	// Stop drawing when the application is moved to the background.
 }
 
 void
-MusicRelaxtion::OnLowMemory(void)
+MusicRelaxation::OnLowMemory(void)
 {
 	// TODO:
 	// Free unused resources or close the application.
 }
 
 void
-MusicRelaxtion::OnBatteryLevelChanged(BatteryLevel batteryLevel)
+MusicRelaxation::OnBatteryLevelChanged(BatteryLevel batteryLevel)
 {
 	// TODO:
 	// Handle any changes in battery level here.
@@ -100,14 +100,14 @@ MusicRelaxtion::OnBatteryLevelChanged(BatteryLevel batteryLevel)
 }
 
 void
-MusicRelaxtion::OnScreenOn (void)
+MusicRelaxation::OnScreenOn (void)
 {
 	// TODO:
 	// Get the released resources or resume the operations that were paused or stopped in OnScreenOff().
 }
 
 void
-MusicRelaxtion::OnScreenOff (void)
+MusicRelaxation::OnScreenOff (void)
 {
 	// TODO:
 	//  Unless there is a strong reason to do otherwise, release resources (such as 3D, media, and sensors) to allow the device to enter the sleep mode to save the battery.

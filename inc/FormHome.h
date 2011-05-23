@@ -15,6 +15,9 @@ public:
 	virtual ~FormHome(void);
 	bool Initialize(void);
 
+	static const int ID_SOFTKEY_0 = 102;
+	static const int ID_SOFTKEY_1 = 103;
+
 // Implementation
 protected:
 
