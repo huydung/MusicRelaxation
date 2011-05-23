@@ -6,11 +6,14 @@
  */
 
 #include "MusicEngine.h"
+#include <FMedia.h>
+#include "Util.h"
 
 using namespace Osp::Base::Utility;
+using namespace Osp::Graphics;
 
 MusicEngine::MusicEngine():
-_files(null),_songs(null){
+_files(null),_songs(null),pBmpDel(null){
 	// TODO Auto-generated constructor stub
 
 }
@@ -27,7 +30,16 @@ MusicEngine::~MusicEngine() {
 
 result
 MusicEngine::Construct(String files){
+	AppLogDebug("Construct engine with: %S", files.GetPointer());
 	SetSongsList(files);
+	//Create the delete image
+	Osp::Media::Image * image = new Osp::Media::Image();
+	if(!IsFailed(image->Construct())){
+		pBmpDel = image->DecodeN("/Res/480x800/116.png", BITMAP_PIXEL_FORMAT_ARGB8888);
+		delete image;
+	}else{
+		AppLogException("Can not construct Image");
+	}
 };
 
 bool
@@ -111,6 +123,15 @@ MusicEngine::RemoveSong(String fileName){
 	}
 };
 
+bool
+MusicEngine::RemoveSongAt(int index){
+	if( _songs != null ){
+		_songs->RemoveAt( index, true );
+		_convertListToString();
+	};
+	return false;
+}
+
 void
 MusicEngine::_convertListToString(){
 	if ( _files != null ){ _files->Clear(); }
@@ -132,4 +153,19 @@ MusicEngine::_convertListToString(){
 		AppLogDebug("Current Files: %S", _files->GetPointer());
 		delete iter;
 	}
+}
+
+void
+MusicEngine::PopulateList(List * pList){
+	pList->RemoveAllItems();
+	if( _songs->GetCount() > 0 ){
+		IEnumerator * iter = _songs->GetEnumeratorN();
+		String * file;
+		while( !IsFailed(iter->MoveNext()) ){
+			file = (String*)iter->GetCurrent();
+			String name = Util::GetFileName(*file);
+			pList->AddItem(&name, null, pBmpDel, null, 1);
+		}
+	}
+	pList->RequestRedraw(true);
 }

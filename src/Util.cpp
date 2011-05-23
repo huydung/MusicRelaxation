@@ -119,3 +119,20 @@ void Util::SwitchForm(Form * form, Form * currentForm, bool deleteCurrentForm = 
 		frame->RemoveControl(*currentForm);
 	}
 }
+
+String
+Util::GetFileName(String &fullPath){
+	int indexOfLastSlash;
+	fullPath.LastIndexOf("/", fullPath.GetLength()-1, indexOfLastSlash);
+	if(indexOfLastSlash < 0){indexOfLastSlash = 0;}
+	String fileName;
+	fullPath.SubString(indexOfLastSlash+1, fileName);
+	return fileName;
+};
+
+String
+Util::GetLocaledString(String key){
+	String message;
+	Osp::App::Application::GetInstance()->GetAppResource()->GetString(key, message);
+	return message;
+}

@@ -19,9 +19,6 @@ public:
 	Util();
 	virtual ~Util();
 
-	static const int MUSIC_LIST = 1;
-	static const int TIME = 2;
-
 	static MusicRelaxation * GetApp();
 
 	static void SaveInfoStr( int key, Osp::Base::String value );
@@ -33,6 +30,8 @@ public:
 	static int GetInfoInt(int key, int defaultInt);
 
 	static void SwitchForm(Form * form, Form * currentForm, bool deleteCurrentForm);
+	static String GetFileName(String &fullPath);
+	static String GetLocaledString(String key);
 };
 
 #endif /* UTIL_H_ */

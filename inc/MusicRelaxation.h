@@ -5,6 +5,7 @@
 #include <FBase.h>
 #include <FSystem.h>
 #include <FUi.h>
+#include "MusicEngine.h"
 
 /**
  * [MusicRelaxtion] application must inherit from Application class
@@ -20,12 +21,16 @@ public:
 	 * [MusicRelaxtion] application must have a factory method that creates an instance of itself.
 	 */
 	static Osp::App::Application* CreateInstance(void);
+	MusicEngine * getEngine();
 
+protected:
+	MusicEngine * _engine;
 
 public:
 	MusicRelaxation();
 	~MusicRelaxation();
-
+	static const int MUSIC_LIST = 1;
+	static const int TIME = 2;
 
 public:
 

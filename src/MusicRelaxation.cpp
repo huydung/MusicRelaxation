@@ -15,7 +15,8 @@ using namespace Osp::System;
 using namespace Osp::Ui;
 using namespace Osp::Ui::Controls;
 
-MusicRelaxation::MusicRelaxation()
+MusicRelaxation::MusicRelaxation():
+_engine(null)
 {
 }
 
@@ -30,18 +31,20 @@ MusicRelaxation::CreateInstance(void)
 	return new MusicRelaxation();
 }
 
+MusicEngine *
+MusicRelaxation::getEngine(){
+	return _engine;
+};
+
 bool
 MusicRelaxation::OnAppInitializing(AppRegistry& appRegistry)
 {
-	// TODO:
-	// Initialize UI resources and application specific data.
-	// The application's permanent data and context can be obtained from the appRegistry.
-	//
-	// If this method is successful, return true; otherwise, return false.
-	// If this method returns false, the application will be terminated.
-
-	// Uncomment the following statement to listen to the screen on/off events.
-	//PowerManager::SetScreenEventListener(*this);
+	_engine = new MusicEngine();
+	String key;
+	key.Append(MUSIC_LIST);
+	String list = "";
+	appRegistry.Get(key, list);
+	_engine->Construct(list);
 
 	// Create a form
 	FormHome *pForm1 = new FormHome();
@@ -64,9 +67,9 @@ MusicRelaxation::OnAppInitializing(AppRegistry& appRegistry)
 bool
 MusicRelaxation::OnAppTerminating(AppRegistry& appRegistry, bool forcedTermination)
 {
-	// TODO:
-	// Deallocate resources allocated by this application for termination.
-	// The application's permanent data and context can be saved via appRegistry.
+	if( _engine != null ){
+		delete _engine;
+	}
 	return true;
 }
 
