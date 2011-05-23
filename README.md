@@ -1,8 +1,8 @@
-﻿# Music Relaxtion
+﻿# Music Relaxation
 
 ## What it is
 
-This is a [bada](http://www.bada.com) application that allow user to choose several of her favorite songs; set up a timer, says, 15 minutes; then plays them and enjoy her sleep/relaxtion. The music will automatically fade out and stop after the specified time.
+This is a [bada](http://www.bada.com) application that allow user to choose several of her favorite songs; set up a timer, says, 15 minutes; then plays them and enjoy her sleep/relaxation. The music will automatically fades out and stops after the specified time.
 
 This application is built by [huydung](http://www.huydung.com) in 1 day as a demo in "[Introduction to bada development](http://aptech.vn/chi-tiet/3593/Hoc-mien-phi-hoan-toan-lap-trinh-cho-de-yeu-tren-nen-tang-Bada.html)" course at [Hanoi-Aptech](http://www.aptech.vn).
 
